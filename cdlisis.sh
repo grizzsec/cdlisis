@@ -62,3 +62,21 @@ fi
 echo "Realizando análisis de seguridad de formularios..."
 curl -s -L "$url" | grep -E "<form.+action=" | while read -r form_line; do
   form_action=$(echo "$form_line" | sed -E 's/.*action="([^"]+)
+echo "Análisis de formulario: $form_action"
+  # Agrega aquí tu lógica de análisis de formularios según tus necesidades
+  # Ejemplo: Verificar si el formulario utiliza HTTPS, si está protegido contra CSRF, etc.
+  curl -s -L "$form_action" | grep -E "(https|csrf_token)"
+done
+
+# Realizar un análisis de seguridad de los enlaces en la página web
+echo "Realizando análisis de seguridad de enlaces..."
+curl -s -L "$url" | grep -E "<a\s+href=" | while read -r link_line; do
+  link_href=$(echo "$link_line" | sed -E 's/.*href="([^"]+)".*/\1/')
+  echo "Análisis de enlace: $link_href"
+  # Agrega aquí tu lógica de análisis de enlaces según tus necesidades
+  # Ejemplo: Verificar si el enlace utiliza HTTPS, si está protegido contra XSS, etc.
+  curl -s -L "$link_href" | grep -E "(https|xss)"
+done
+
+# Eliminar el directorio temporal
+rm -rf "$temp_dir"
