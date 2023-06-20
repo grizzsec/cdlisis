@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# URL de la página web a analizar
-url="https://www.example.com"
+# Solicitar la URL de la página web a analizar
+read -p "Introduce la URL de la página web a analizar: " url
 
 # Directorio temporal para almacenar los archivos descargados
 temp_dir="temp_analysis"
