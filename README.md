@@ -1,6 +1,6 @@
 # cdlisis
 
-[b]Script en bash que realiza análisis dinámicos en páginas web.[/b]
+Script en bash que realiza análisis dinámicos en páginas web.
 
 En esta versión, se agregaron varias características (además de wget, grep... etc)
 
