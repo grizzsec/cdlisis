@@ -1,0 +1,9 @@
+git clone https://github.com/christiandelopez/cdlisis.git
+cd /ruta/del/directorio
+chmod +x cdlisis.sh
+./cdlisis.sh
+
+Asegúrate de tener instaladas las herramientas requeridas, como curl, grep, nikto, wpscan, exiftool, pdfid y js-beautify, para que el script funcione correctamente. 
+
+Ten en cuenta que este script está diseñado para ser ejecutado en sistemas Unix/Linux. Si estás utilizando Windows, puedes utilizar un emulador de terminal como Git Bash o WSL (Windows Subsystem for Linux) para ejecutar el script.
+
